@@ -8,10 +8,10 @@
     <label for="title">Название поста:</label>
     <input id="title" type="text" formControlName="title">
     <div
-      *ngIf="form.get('title').errors.required"
+      *ngIf="form.get('title').touched && form.get('title').invalid"
       class="validation"
     >
-      <small>
+      <small *ngIf="form.get('title').errors.required">
         Введите название поста
       </small>
     </div>
@@ -19,7 +19,7 @@
 
   <div class="form-control">
     <label>Контент поста:</label>
-
+    <quill-editor formControlName="text"></quill-editor>
   </div>
 
   <div
@@ -29,10 +29,10 @@
     <label for="author">Автор поста:</label>
     <input id="author" type="text" formControlName="author">
     <div
-      *ngIf="form.get('author').errors.required"
+      *ngIf="form.get('author').touched && form.get('author').invalid"
       class="validation"
     >
-      <small>
+      <small *ngIf="form.get('author').errors.required">
         Введите автора поста
       </small>
     </div>
