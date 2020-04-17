@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
 })
 export class DashboardPageComponent implements OnInit, OnDestroy {
 
-  posts: Post[]
+  posts: Post[] = []
   pSup: Subscription
 
   constructor(private postsService: PostsService) {
@@ -29,6 +29,6 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   }
 
   remove(id: string) {
-    
+
   }
 }
